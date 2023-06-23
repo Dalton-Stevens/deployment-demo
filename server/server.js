@@ -32,7 +32,7 @@ app.get('/profile', (req, res) => {
     try {
         nonExistentFunction();
     } catch (error) {
-        rollbar.error(err);
+        rollbar.error(error);
     };
 })
 
