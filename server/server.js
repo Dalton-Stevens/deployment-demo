@@ -20,12 +20,6 @@ rollbar.log('Hello world!')
 
 app.get('/', (req, res) => {
     res.status(200).sendFile(path.join(__dirname, '../public/index.html'))
-
-    try {
-        nonExistentFunction();
-    } catch (error) {
-        console.log(error);
-    };
 })
 
 app.get('/castle', (req, res) => {
@@ -34,6 +28,12 @@ app.get('/castle', (req, res) => {
 
 app.get('/profile', (req, res) => {
     res.status(200).sendFile(path.join(__dirname, '../public/profile.html'))
+
+    try {
+        nonExistentFunction();
+    } catch (error) {
+        console.log(error);
+    };
 })
 
 app.listen(4000, console.log('Server running on 4000!'));
